@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x[] = {1, 2, 3, 6, 7};
+    int y[] = {0, 0, 0, 1, 1};
+    int i, k = 3, count = 0;
+    float d, min;
+    int test = 5;
+
+    printf("Test value: %d\n", test);
+
+    for(i = 0; i < 5; i++) {
+        d = fabs(test - x[i]);
+        printf("Distance from %d = %.0f\n", x[i], d);
+        if(d <= 2 && y[i] == 1)
+            count++;
+    }
+
+    printf("Classification: %s",
+           count >= 1 ? "Class 1" : "Class 0");
+
+    return 0;
+}
+#output
+Test value: 5
+Distance from 1 = 4
+Distance from 2 = 3
+Distance from 3 = 2
+Distance from 6 = 1
+Distance from 7 = 2
+Classification: Class 1
