@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main() {
+    int a[10], n, i, sum = 0, checksum;
+
+    printf("Enter number of data bits: ");
+    scanf("%d", &n);
+
+    printf("Enter data: ");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        sum += a[i];
+    }
+
+    checksum = ~sum & 1;
+
+    printf("Sum = %d\n", sum);
+    printf("Checksum = %d\n", checksum);
+
+    return 0;
+}
+#output
+Enter number of data bits: 4
+Enter data: 1 0 1 1
+
+Sum = 3
+Checksum = 0
